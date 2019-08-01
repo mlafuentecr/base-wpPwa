@@ -1,0 +1,118 @@
+
+/* =Theme customization starts here
+------------------------------------------------------- */
+
+
+div#insallApp {
+    position: fixed;
+    bottom: 0px;
+    background: #ffffff;
+    z-index: 20;
+    left: 0px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    overflow: hidden;
+    border-top: solid 1px silver;
+    color: black;
+    justify-content: space-evenly;
+    padding: 0px 0px;
+    font-size: 2.4vh;
+    height: 0px;
+    -webkit-transition: height .5s;
+    display: none;
+    flex-wrap: wrap;
+    z-index: 999;
+}
+
+
+span.installTex {
+    width: 70%;
+    text-align: left;
+    margin-left: 30px;
+    display: flex;
+    align-items: inherit;
+    height: 100%;
+
+}
+.level1 {
+    width: 100%;
+    height: 50%;
+    border: 1px solid white;
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+    padding-left: 40px;
+}
+
+.level2 {
+    width: 100%;
+    height: 50%;
+    border: 1px solid white;
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.level1 img {
+    height: 80%;
+    background-color: #d5d5d5;
+    padding: 1px;
+    border-radius: 10px;
+}
+.showApp{
+    display: flex!important;
+    height: 20vh!important;
+    -webkit-transition: height .5s;
+}
+button#btnYes {
+    background-color: #2e96db;
+    color: white;
+    width: 30%;
+    text-transform: uppercase;
+    border-radius: initial;
+    width: 50%;
+    height: 50%;
+    top: -20px;
+    position: relative;
+
+}
+button#btnNo {
+    background-color: #ffffff;
+    display: flex;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    color: gray;
+    align-items: center;
+    padding: 10px;
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+@media (min-width:768px) {
+    
+element.style {
+}
+.level1 {
+    justify-content: center;
+        width: fit-content;
+}
+.level2 {
+    justify-content: center;
+}
+
+
+
+}
