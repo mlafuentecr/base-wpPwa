@@ -177,7 +177,7 @@ function footerDiv(){
 //Write JSON Manifest
 function writeManifestJson(  ) {
 
- $url =  get_site_url();
+ $url =  get_site_url().'/';
  echo $url;
   $namePWA         = get_option( 'namePWA');
   $shortName       = get_option( 'shortName');
@@ -196,7 +196,7 @@ function writeManifestJson(  ) {
 	if(!$startPag)		{$startPag 		=  $url."/" ;}
 	if(!$description)	{$description = "Some Description";}
 	if(!$icon)				{$icon 				= plugins_url('/assets/images/icons-512.png', __FILE__);}
-  if(!$showBanner)	{$showBanner 	= 'on';}
+  if(!$showBanner)	{$showBanner 	= 'off';}
   if(!$textBanner)	{$textBanner 	= 'Click Here to get this app';}
 	if(!$displayMode)	{$displayMode = "fullscreen";}
 	if(!$orientation)	{$orientation = "portrait";}
@@ -222,7 +222,7 @@ function writeManifestJson(  ) {
 				"sizes": "512x512"
 			}
 		],
-		"start_url": "'.$startPag .'",
+		"start_url": "'.$startPag .'/",
 		"background_color": "'.$backgroundColor .'",
 		"display": "'.$displayMode .'",
 		"theme_color": "'.$themeColor .'"
