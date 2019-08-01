@@ -43,6 +43,8 @@ if(class_exists( 'class_index'))
   add_option( 'shortName',    'shortName', '', 'yes' );
   add_option( 'startPag',     'startPag', '', 'yes' );
   add_option( 'description',  'Description', '', 'yes' );
+  add_option( 'showBanner',  'Description', '', 'yes' );
+  add_option( 'textBanner',  'Description', '', 'yes' );
   add_option( 'icon',          'Icon url 512px', '', 'yes' );
   add_option( 'displayMode',   'fullscreen | standalone | minimal-ui', '', 'yes' );
   add_option( 'orientation',    'Landscape | Portrait | both', '', 'yes' );
@@ -50,7 +52,7 @@ if(class_exists( 'class_index'))
   add_option( 'backgroundColor',  'black', '', 'yes' );
 
 }
-
+  $url = site_url();
   $namePWA         = get_option( 'namePWA');
   $shortName       = get_option( 'shortName');
   $startPag        = get_option( 'startPag');
@@ -86,15 +88,19 @@ function saveMethod(){
   require_once plugin_dir_path( __FILE__ ).'../base-wpPwa.php';
     writeManifestJson();
 
+    
+
+
+   
   if ( !is_null( get_option('checkForm') )) {
               //No hay variables crearlas
          update_option( 'namePWA',          $_POST["pwaName"], '', 'yes' );
          update_option( 'shortName',        preg_replace('/\s+/', ' ',$_POST["shortName"]), '', 'yes' );
-         update_option( 'startPag',         $_POST["startPag"], '', 'yes' );
+         update_option( 'startPag',         site_url(), '', 'yes' );
          update_option( 'description',      preg_replace('/\s+/', ' ',$_POST["description"]), '', 'yes' );
-
-         update_option( 'showBanner',      $_POST["showBanner"], '', 'yes' );
-         update_option( 'textBanner',      $_POST["textBanner"], '', 'yes' );
+         if(isset($_POST['showBanner']))    {update_option( 'showBanner',       'on', '', 'yes' );}else{update_option( 'showBanner',       'off', '', 'yes' );}; 
+         
+         update_option( 'textBanner',       $_POST["textBanner"], '', 'yes' );
          update_option( 'displayMode',      $_POST["displayMode"], '', 'yes' );
          update_option( 'orientation',      $_POST["orientation"], '', 'yes' );
          update_option( 'themeColor',       $_POST["themeColor"], '', 'yes' );
@@ -178,10 +184,11 @@ function saveMethod(){
 
 
 <!-- Rectangular switch -->
-<label id="manifest-icon">Show banner to all browse <?php  echo $showBanner ?></label>
+<label id="manifest-icon">Show banner on desktops <?php  echo $showBanner ?></label>
  <div class=" bannerShow">
+
     <label class="switch ">
-    <input name="showBanner" type="checkbox" <?php echo ($showBanner == 'on' ? 'checked' : ''); ?> >
+    <input type="checkbox"  name="showBanner" id="showBanner" <?php echo ($showBanner == 'on' ? 'checked' : ''); ?> >
       <span class="slider"></span>
     </label>
   </div>

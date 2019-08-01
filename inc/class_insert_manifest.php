@@ -66,7 +66,7 @@ if(class_exists( 'class_inset_manifest'))
 	if(!$startPag)		{$startPag =  $url ;}
 	if(!$description)	{$description = "Some Description";}
 	if(!$icon)				{$icon = plugins_url('/assets/images/icons-512.png', __FILE__);}
-  //if(!$showBanner)	{$showBanner = 1;}
+
 	if(!$displayMode)	{$displayMode = "fullscreen";}
 	if(!$orientation)	{$orientation = "portrait";}
 	if(!$themeColor)	{$themeColor = "#161e65";}

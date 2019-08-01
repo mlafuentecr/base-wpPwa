@@ -13,12 +13,14 @@ const isIos = () => {
   var isAndroid = /android/i.test(navigator.userAgent.toLowerCase());
   var isiDevice = /ipad|iphone|ipod/i.test(navigator.userAgent.toLowerCase());
 
+
   var result =localStorage.getItem("choiceResult");
  
-  
+
 
  
   if(isAndroid || isiDevice){
+    
     localStorage.setItem("choiceResult", "no");
   }else{
   

@@ -247,7 +247,7 @@ function writeManifestJson(  ) {
   fclose( $open );
   fclose( $open2 );
 
-  echo'Json';
+  echo'Json updated | and ';
 
 
 }
