@@ -2,12 +2,6 @@
 	{
 		"short_name": "HRV ",
 		"name": "highrollervip",
-		"description": " Become a VIP Account holder today and benefit from all the rewards. ",
-		"start_url": "/",
-		"prefer_related_applications": false,
-    "background_color": "#1f2b61",
-    "theme_color": "#0080ff",
-		"display": "fullscreen",
 		"icons": [
 			{
 				"src": "https://highrollervip.net/wp-content/uploads/2019/08/ico.png",
@@ -19,5 +13,9 @@
 				"type": "image/png",
 				"sizes": "512x512"
 			}
-		]
+		],
+		"start_url": "https://highrollervip.net/",
+		"background_color": "#1f2b61",
+		"display": "fullscreen",
+		"theme_color": "#0080ff"
 	}

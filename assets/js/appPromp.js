@@ -6,12 +6,12 @@ var insallApp = document.getElementById('insallApp');
 var btnYes    = document.getElementById('btnYes');
 var btnNo    = document.getElementById('btnNo');
 
-if( screen.width <= 480 ) {     
-  // is mobile.. 
+if( screen.width <= 480 ) {
+  // is mobile..
   this.console.log(' ---------Dont show pc banner in android');
   localStorage.setItem("choiceResult", "no");
-}else( screen.width > 480 ){
- 
+}else if( screen.width > 480 ){
+
 if(localStorage.getItem("choiceResult") === null){
   document.getElementById('insallApp').classList.add("showApp");
   this.console.log(' ---------show app in laptop');
@@ -24,7 +24,7 @@ if(localStorage.getItem("choiceResult") === null){
 // Detects if device is on iOS
 const isIos = () => {
   const userAgent = window.navigator.userAgent.toLowerCase();
-  
+
   return /iphone|ipad|ipod/.test( userAgent );
 }
 
@@ -48,16 +48,16 @@ var deferredPrompt;
       deferredPrompt = e;
         // alert(localStorage.getItem("choiceResult")+'xxx');
       // retrieve data value
-   
- 
-      
+
+
+
     });
 
 
 
 btnYes.addEventListener('click', (e) => {
   // hide our user interface that shows our A2HS button
- 
+
   insallApp.classList.remove("showApp");
   // Show the prompt
   deferredPrompt.prompt();
@@ -73,9 +73,9 @@ btnYes.addEventListener('click', (e) => {
         // save data value
         // insallApp.classList.remove("showApp");
         localStorage.setItem("choiceResult", "no dont show more banner");
-        
+
       }
-     
+
       deferredPrompt = null;
     });
 
@@ -88,8 +88,8 @@ btnNo.addEventListener('click', (e) => {
     insallApp.classList.remove("showApp");
    localStorage.setItem("choiceResult", "no dont show more banner");
   });
-  
-  
+
+
 
 window.addEventListener('appinstalled', (evt) => {
   console.log('a2hs installed');
